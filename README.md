@@ -58,3 +58,4 @@ node server.js
 
 - **[Ava Choi](https://github.com/avachoi)** - Project Lead, Backend Development
 - **[Tulip Karmakar](https://github.com/tulipkr)** - Frontend Development, UI/UX Design
+
