@@ -1,0 +1,96 @@
+*{
+	margin:1px;
+	padding:6px;
+}
+
+
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:lightblue;
+	background-image:url('../images/signup_bgimg.jpg');
+	background-repeat:no-repeat;    
+	background-attachment:fixed;
+	background-size:cover;
+	position:relative;
+}	
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(254,254,254,0.6); 
+    z-index: -1; } 
+
+header{
+	background-color:#ACACAC;
+	padding: 8px 0;
+}
+
+
+footer{
+	font-family: monospace ;
+}
+
+
+nav{
+	display: flex;
+        justify-content: space-between;
+	align-items:center;
+	padding:0 20px;
+}
+
+ul{
+	display: flex;
+	list-style: none;
+}
+
+#logo{
+	font-size: 26px;
+	font-family: Fantasy;
+	color:blueviolet;
+}
+
+.nav-links{
+	color:white;
+	font-variant:small-caps;
+	text-decoration:none;
+	font-size:20px;
+}
+
+li{
+	margin-left:75px;
+}
+
+.active{
+	border-style:solid;
+	border-width:2px;
+	border-color: white;
+	font-size:22px;
+	font-weight:bold;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+h1{
+	text-align: center;
+        font-family: sans-serif;
+        padding: 30px;
+        font-size: 35px;
+}
+
+p{
+    text-align: center;
+    font-size: larger;
+    padding: 30px;
+}
+
+#form-container{
+    border-style: solid;
+    border-radius: 30px;
+    background-color: aliceblue;
+}
