@@ -1,0 +1,60 @@
+*{
+	margin:1px;
+	padding:6px;
+}
+
+
+body{
+	font-family:Arial, Helvetica, sans-serif;
+}	
+
+header{
+	background-color:lightsteelblue;
+	padding: 20px 0;
+}
+
+
+footer{
+	font-family: monospace ;
+}
+
+
+nav{
+	display: flex;
+        justify-content: space-between;
+	align-items:center;
+	padding:0 20px;
+}
+
+ul{
+	display: flex;
+	list-style: none;
+}
+
+#logo{
+	font-size: 24px;
+	font-family: Fantasy;
+	color:mediumorchid;
+}
+
+.nav-links{
+	color:white;
+	
+	text-decoration:none;
+	font-size:20px;
+}
+
+li{
+	border-style:solid;
+	border-width:2px;
+	border-color:black;
+	margin-left:75px;
+}
+
+.active{
+	font-weight:bold;
+}
+
+a:hover{
+	text-decoration:underline;
+}
