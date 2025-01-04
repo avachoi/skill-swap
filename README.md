@@ -38,21 +38,22 @@ cd backend
 npm install
 ```
 
-- Create a .env file in the backend directory:
+    - Create a .env file in the backend directory:
 
-```
-MONGODB_URI=your_mongodb_connection_string
-PORT=5000
-```
+    ```
+    MONGODB_URI=your_mongodb_connection_string
+    PORT=5000
+    ```
 
-- Start the backend server:
+    - Start the backend server:
 
-```
-node server.js
-```
+    ```
+    node server.js
+    ```
 
-- Frontend Setup
-  Open frontend/index.html in your browser or serve it using a static file server (e.g., Live Server in VSCode).
+3. Frontend Setup
+
+Open frontend/index.html in your browser or serve it using a static file server (e.g., Live Server in VSCode).
 
 ## Contributors
 
