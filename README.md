@@ -59,3 +59,4 @@ Open frontend/index.html in your browser or serve it using a static file server 
 
 - **[Ava Choi](https://github.com/avachoi)** - Project Lead, Backend Development
 - **[Tulip Karmakar](https://github.com/tulipkr)** - Frontend Development, UI/UX Design
+
