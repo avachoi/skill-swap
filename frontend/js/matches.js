@@ -6,42 +6,75 @@ const email = params.get("email");
 fetchMatches(email);
 
 async function fetchMatches(email) {
-    const response = [
-        {
-            _id: "677a01c9c6f222716b84e493",
-            name: "b",
-            email: "b@email.com",
-            skillsProficient: ["JavaScript", "React"],
-            skillsNeeded: ["HTML", "CSS"],
-            requests: [
-                {
-                    from: "dd@email.com",
-                    message: "hi b",
-                    _id: "677a056317484f45a13adf81",
-                },
-            ],
-            v: 1,
-        },
-        {
-            _id: "677a02c6aca3d4d546040dad",
-            name: "c",
-            email: "c@mail.com",
-            skillsProficient: ["HTML", "CSS", "JavaScript"],
-            skillsNeeded: ["CSS", "JavaScript", "React"],
-            requests: [],
-            v: 0,
-        },
-        {
-            _id: "677a0f437f221eba0b5dd769",
-            name: "alex",
-            email: "alexbchoi@gmail.com",
-            skillsProficient: ["JavaScript", "React"],
-            skillsNeeded: ["HTML", "CSS"],
-            requests: [],
-            __v: 0,
-        },
-    ];
-    displayMatches(response);
+	const response = [
+		{
+			_id: "677a01c9c6f222716b84e493",
+			name: "b",
+			email: "b@email.com",
+			skillsProficient: ["JavaScript", "React"],
+			skillsNeeded: ["HTML", "CSS"],
+			requests: [
+				{
+					from: "dd@email.com",
+					message: "hi b",
+					_id: "677a056317484f45a13adf81",
+				},
+			],
+			v: 1,
+		},
+		{
+			_id: "677a02c6aca3d4d546040dad",
+			name: "c",
+			email: "c@mail.com",
+			skillsProficient: ["HTML", "CSS", "JavaScript"],
+			skillsNeeded: ["CSS", "JavaScript", "React"],
+			requests: [],
+			v: 0,
+		},
+		{
+			_id: "677a0f437f221eba0b5dd769",
+			name: "alex",
+			email: "alexbchoi@gmail.com",
+			skillsProficient: ["JavaScript", "React"],
+			skillsNeeded: ["HTML", "CSS"],
+			requests: [],
+			__v: 0,
+		},
+		{
+			_id: "677a01c9c6f222716b84e493",
+			name: "b",
+			email: "b@email.com",
+			skillsProficient: ["JavaScript", "React"],
+			skillsNeeded: ["HTML", "CSS"],
+			requests: [
+				{
+					from: "dd@email.com",
+					message: "hi b",
+					_id: "677a056317484f45a13adf81",
+				},
+			],
+			v: 1,
+		},
+		{
+			_id: "677a02c6aca3d4d546040dad",
+			name: "c",
+			email: "c@mail.com",
+			skillsProficient: ["HTML", "CSS", "JavaScript"],
+			skillsNeeded: ["CSS", "JavaScript", "React"],
+			requests: [],
+			v: 0,
+		},
+		{
+			_id: "677a0f437f221eba0b5dd769",
+			name: "alex",
+			email: "alexbchoi@gmail.com",
+			skillsProficient: ["JavaScript", "React"],
+			skillsNeeded: ["HTML", "CSS"],
+			requests: [],
+			__v: 0,
+		},
+	];
+	displayMatches(response);
 }
 
 function displayMatches(matches) {
