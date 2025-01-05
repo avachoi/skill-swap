@@ -33,46 +33,60 @@ function displayMatches(matches) {
 		matchesContainer.innerHTML = "<p>No matches found.</p>";
 		return;
 	}
-	matches.forEach((match) => {
+	matches.forEach((match, idx) => {
 		const matchDiv = document.createElement("div");
 		matchDiv.classList.add("match");
 		matchDiv.innerHTML = `
           <p><strong>Name:</strong> ${match.name}</p>
           <p><strong>Email:</strong> ${match.email}</p>
           <p><strong>Skills:</strong> ${match.skillsProficient.join(", ")}</p>
-          <button class="send-request-btn" data-email="${
-						match.email
-					}">Send Request</button>
-    `;
+          <button class="send-request-btn target${idx}" data-email="${
+			match.email
+		}">Request Team-up</button>
+        `;
 		matchesContainer.appendChild(matchDiv);
 	});
+
 	// Add event listeners for buttons
 	const buttons = document.querySelectorAll(".send-request-btn");
 	buttons.forEach((button) =>
 		button.addEventListener("click", (e) => {
 			const toEmail = e.target.dataset.email;
-			openRequestModal(toEmail);
+			appendModal(toEmail, e.target.classList.value.split(" ")[1]);
 		})
 	);
 }
 
-let selectedEmail = "";
+function appendModal(toEmail, className) {
+	const existedModal = document.querySelector(".modal");
+	if (existedModal) {
+		existedModal.remove();
+	}
 
-function openRequestModal(toEmail) {
-	selectedEmail = toEmail;
-	const modal = document.getElementById("requestModal");
-	modal.style.display = "block";
-}
+	const matchBox = document.querySelector(`.${className}`).parentElement;
 
-document.getElementById("closeModalBtn").addEventListener("click", () => {
-	const modal = document.getElementById("requestModal");
-	modal.style.display = "none";
-});
+	// Create modal container
+	const modalDiv = document.createElement("div");
+	modalDiv.classList.add("modal");
+	modalDiv.innerHTML = `
+        <div class="modal-content">
+            <textarea id="requestMessage" placeholder="Write your message here"></textarea>
+            <button id="sendRequestBtn">Send</button>
+            <button id="closeModalBtn">Close</button>
+        </div>
+    `;
+	matchBox.appendChild(modalDiv);
 
-document
-	.getElementById("sendRequestBtn")
-	.addEventListener("click", async () => {
-		const message = document.getElementById("requestMessage").value;
+	// Add event listener for closing the modal
+	const closeModalBtn = modalDiv.querySelector("#closeModalBtn");
+	closeModalBtn.addEventListener("click", () => {
+		matchBox.removeChild(modalDiv);
+	});
+
+	// Add event listener for sending the request
+	const sendRequestBtn = modalDiv.querySelector("#sendRequestBtn");
+	sendRequestBtn.addEventListener("click", async () => {
+		const message = modalDiv.querySelector("#requestMessage").value;
 
 		if (!message.trim()) {
 			alert("Please write a message.");
@@ -84,7 +98,7 @@ document
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
-					toEmail: selectedEmail,
+					toEmail: toEmail,
 					fromEmail: email,
 					message,
 				}),
@@ -92,7 +106,7 @@ document
 
 			if (response.ok) {
 				alert("Request sent successfully.");
-				document.getElementById("requestModal").style.display = "none";
+				matchBox.removeChild(modalDiv); // Remove modal after sending request
 			} else {
 				const error = await response.json();
 				alert(`Error: ${error.message}`);
@@ -102,3 +116,4 @@ document
 			alert("An error occurred. Please try again.");
 		}
 	});
+}
