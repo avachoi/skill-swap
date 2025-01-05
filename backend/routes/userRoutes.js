@@ -51,7 +51,7 @@ router.post("/send-request", async (req, res) => {
 			service: "gmail",
 			auth: {
 				user: "skillswapio@gmail.com", // Your email
-				pass: "killswap2222", // Your email password
+				pass: "lacm nqqv tfuq bapz", // Your email password
 			},
 		});
 
@@ -59,7 +59,7 @@ router.post("/send-request", async (req, res) => {
 			from: process.env.EMAIL_USER,
 			to: toEmail,
 			subject: `New Collaboration Request from ${sender.name}`,
-			text: `Hello ${recipient.name},\n\nYou have a new collaboration request from ${sender.name} (${fromEmail}).\n\nMessage: ${message}\n\nRegards,\nSkill Swap Team`,
+			text: `Hello ${recipient.name},\n\nYou have a new collaboration request from ${sender.name} (${fromEmail}).\n\nMessage: ${message}\n\nParticipant: ${sender.name}\n\nSkills:${sender.skillsProficient}\n\nRegards,\nSkill Swap Team`,
 		};
 
 		await transporter.sendMail(mailOptions);
