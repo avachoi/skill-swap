@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api/users";
+// const BASE_URL = "http://localhost:5000/api/users";
 
 const signupForm = document.getElementById("signupForm");
 
@@ -41,7 +41,7 @@ signupForm.addEventListener("submit", async (e) => {
 		});
 		if (response.ok) {
 			alert("Signed up successfully!");
-			// fetchMatches(email); // Fetch matches after signup
+			window.location.href = `matches.html?email=${encodeURIComponent(email)}`;
 		} else {
 			const error = await response.json();
 			alert(`Error: ${error.message}`);
