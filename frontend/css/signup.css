@@ -25,7 +25,7 @@ body::before {
 }
 
 header {
-	background-color: #acacac;
+	background-color: rgba(0, 0, 0, 0.5);
 	padding: 8px 0;
 }
 
@@ -89,9 +89,9 @@ p {
 
 #form-container {
 	margin: auto;
-	border-style: solid;
-	border-radius: 30px;
-	background-color: aliceblue;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.6);
 	max-width: 650px;
 	padding: 25px;
 }
@@ -115,7 +115,7 @@ label {
 }
 
 input[type="submit"] {
-	background-color: cadetblue;
+	background-color: lightslategray;
 	color: white;
 	padding: 12px 20px;
 	border: none;
@@ -127,7 +127,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-	background-color: #45a049;
+	background-color: gray;
 }
 
 #checkbox-container {
