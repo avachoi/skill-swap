@@ -51,7 +51,7 @@ router.post("/send-request", async (req, res) => {
 			service: "gmail",
 			auth: {
 				user: "skillswapio@gmail.com", // Your email
-				pass: "killswap2222", // Your email password
+				pass: "lacm nqqv tfuq bapz", // Your email password
 			},
 		});
 
