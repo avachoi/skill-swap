@@ -55,3 +55,50 @@ function displayMatches(matches) {
 		})
 	);
 }
+
+let selectedEmail = "";
+
+function openRequestModal(toEmail) {
+	selectedEmail = toEmail;
+	const modal = document.getElementById("requestModal");
+	modal.style.display = "block";
+}
+
+document.getElementById("closeModalBtn").addEventListener("click", () => {
+	const modal = document.getElementById("requestModal");
+	modal.style.display = "none";
+});
+
+document
+	.getElementById("sendRequestBtn")
+	.addEventListener("click", async () => {
+		const message = document.getElementById("requestMessage").value;
+
+		if (!message.trim()) {
+			alert("Please write a message.");
+			return;
+		}
+
+		try {
+			const response = await fetch(`${BASE_URL}/send-request`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					toEmail: selectedEmail,
+					fromEmail: email,
+					message,
+				}),
+			});
+
+			if (response.ok) {
+				alert("Request sent successfully.");
+				document.getElementById("requestModal").style.display = "none";
+			} else {
+				const error = await response.json();
+				alert(`Error: ${error.message}`);
+			}
+		} catch (err) {
+			console.error("Error sending request:", err);
+			alert("An error occurred. Please try again.");
+		}
+	});
