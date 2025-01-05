@@ -40,7 +40,18 @@ function displayMatches(matches) {
           <p><strong>Name:</strong> ${match.name}</p>
           <p><strong>Email:</strong> ${match.email}</p>
           <p><strong>Skills:</strong> ${match.skillsProficient.join(", ")}</p>
-        `;
+          <button class="send-request-btn" data-email="${
+						match.email
+					}">Send Request</button>
+    `;
 		matchesContainer.appendChild(matchDiv);
 	});
+	// Add event listeners for buttons
+	const buttons = document.querySelectorAll(".send-request-btn");
+	buttons.forEach((button) =>
+		button.addEventListener("click", (e) => {
+			const toEmail = e.target.dataset.email;
+			openRequestModal(toEmail);
+		})
+	);
 }

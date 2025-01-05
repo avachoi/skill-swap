@@ -5,6 +5,12 @@ const userSchema = new mongoose.Schema({
 	email: { type: String, required: true, unique: true },
 	skillsProficient: [String],
 	skillsNeeded: [String],
+	requests: [
+		{
+			from: String, // email of the user sending the request
+			message: String,
+		},
+	],
 });
 
 module.exports = mongoose.model("User", userSchema);
