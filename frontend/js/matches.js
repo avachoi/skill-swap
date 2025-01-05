@@ -3,45 +3,27 @@ const BASE_URL = "http://localhost:5000/api/users";
 const params = new URLSearchParams(window.location.search);
 const email = params.get("email");
 
-fetchMatches(email);
+if (email) {
+	console.log("email", email);
+	fetchMatches(email);
+} else {
+	alert("Sign up and connect.");
+}
 
 async function fetchMatches(email) {
-    const response = [
-        {
-            _id: "677a01c9c6f222716b84e493",
-            name: "b",
-            email: "b@email.com",
-            skillsProficient: ["JavaScript", "React"],
-            skillsNeeded: ["HTML", "CSS"],
-            requests: [
-                {
-                    from: "dd@email.com",
-                    message: "hi b",
-                    _id: "677a056317484f45a13adf81",
-                },
-            ],
-            v: 1,
-        },
-        {
-            _id: "677a02c6aca3d4d546040dad",
-            name: "c",
-            email: "c@mail.com",
-            skillsProficient: ["HTML", "CSS", "JavaScript"],
-            skillsNeeded: ["CSS", "JavaScript", "React"],
-            requests: [],
-            v: 0,
-        },
-        {
-            _id: "677a0f437f221eba0b5dd769",
-            name: "alex",
-            email: "alexbchoi@gmail.com",
-            skillsProficient: ["JavaScript", "React"],
-            skillsNeeded: ["HTML", "CSS"],
-            requests: [],
-            __v: 0,
-        },
-    ];
-    displayMatches(response);
+	try {
+		const response = await fetch(`${BASE_URL}/matches?email=${email}`);
+		if (response.ok) {
+			const matches = await response.json();
+			console.log("matches", matches);
+			displayMatches(matches);
+		} else {
+			const error = await response.json();
+			alert(`Error: ${error.message}`);
+		}
+	} catch (err) {
+		console.error("Error fetching matches:", err);
+	}
 }
 
 function displayMatches(matches) {

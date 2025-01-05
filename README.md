@@ -7,6 +7,7 @@ A web application designed to connect hackathon participants based on their skil
 - User Registration: Sign up with your name, email, skills you're proficient in, and skills you need.
 - Matchmaking System: Automatically matches users based on their skills and requirements.
 - User Dashboard: View your matches and connect with potential teammates.
+- Send Requests: Send collaboration requests to potential matches, including a personalized message and sender's information (name,email, their skills, required skills).
 - Responsive Design: Accessible on all devices with a user-friendly interface.
 
 ## Tech Stack
@@ -57,5 +58,5 @@ Open frontend/index.html in your browser or serve it using a static file server 
 
 ## Contributors
 
-- **[Ava Choi](https://github.com/avachoi)** - Project Lead, Backend Development
+- **[Ava Choi](https://github.com/avachoi)** - Project Lead, Full-stack Development
 - **[Tulip Karmakar](https://github.com/tulipkr)** - Frontend Development, UI/UX Design
