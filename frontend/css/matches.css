@@ -3,16 +3,37 @@
 	padding:6px;
 }
 
-	
+
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:lightblue;
+	background-image:url('../images/matches_bgimg.jpg');
+	background-repeat:no-repeat;    
+	background-attachment:fixed;
+	background-size:cover;
+	position:relative;
+}	
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(240,240,240,0.6); 
+    z-index: -1; 
+} 
 
 header{
-	background-color:lightsteelblue;
-	padding: 20px 0;
+	background-color:#ACACAC;
+	padding: 8px 0;
 }
 
 
 footer{
 	font-family: monospace ;
+	text-align:center;
 }
 
 
@@ -29,28 +50,93 @@ ul{
 }
 
 #logo{
-	font-size: 24px;
+	font-size: 26px;
 	font-family: Fantasy;
-	color:mediumorchid;
+	color:blueviolet;
 }
 
 .nav-links{
 	color:white;
+	font-variant:small-caps;
 	text-decoration:none;
 	font-size:20px;
 }
 
 li{
-	border-style:solid;
-	border-width:2px;
-	border-color:black;
 	margin-left:75px;
 }
 
 .active{
+	border-style:solid;
+	border-width:2px;
+	border-color: white;
+	font-size:22px;
 	font-weight:bold;
 }
 
 a:hover{
 	text-decoration:underline;
 }
+
+h1{
+	text-align: center;
+        font-family: sans-serif;
+        padding: 30px;
+        font-size: 40px;
+}
+
+
+#caption{
+    text-align: center;
+    font-size: larger;
+    padding: 30px;
+}
+
+.match{
+	border-style: outset;
+	padding:15px;
+	margin:5px;
+	background-color:aliceblue;
+}
+
+
+textarea{
+	background-color:aliceblue;
+	width:300px;
+	height:50px;
+}
+
+.send-request-btn{
+    background-color: cadetblue;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+     border-radius: 4px;
+    font-variant: small-caps;
+    font-size: medium;
+}
+
+.send-request-btn:hover {
+  background-color: #45a049;
+}
+
+
+#requestModal{
+        border-style: outset;
+	padding:15px;
+	margin:5px;
+	width: 45%;
+	background-color:aliceblue;
+}
+
+#sendRequestBtn, #closeModalBtn{
+    background-color: cadetblue;
+    color: white;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 4px;
+    font-variant: small-caps;
+    font-size: medium;
+}
+
+
